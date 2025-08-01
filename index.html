@@ -337,6 +337,50 @@
                 padding: 1rem;
             }
         }
+        /* Servidor Inativo Style */
+        .inactive-server {
+            opacity: 0.6;
+            filter: grayscale(50%);
+            position: relative;
+        }
+
+        .inactive-server::after {
+            content: 'SERVIDOR ANTIGO';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(45deg, #555, #333);
+            color: #999;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .inactive-server:hover {
+            transform: none;
+            border-color: rgba(220, 38, 38, 0.2);
+            box-shadow: none;
+        }
+
+        /* Disabled Button Style */
+        .btn-disabled {
+            background: linear-gradient(135deg, #555, #333);
+            color: #999;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .btn-disabled:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        .btn-disabled::before {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -488,26 +532,22 @@
                         </a>
                     </div>
                 </div>
-                <div class="content-card">
+                <div class="content-card inactive-server">
                     <div class="flex items-center mb-6">
                         <div class="w-16 h-16 mr-4 bg-black rounded-lg border border-red-500 flex items-center justify-center">
                             <img src="Imagens/Europa.jpg" alt="Europa Roleplay" class="w-12 h-12 object-contain">
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold text-red-400">Europa Roleplay</h3>
-                            <p class="text-gray-400">Secondary Operations</p>
+                            <h3 class="text-2xl font-bold text-red-400">First LCDP Server</h3>
+                            <p class="text-gray-400">Old Family Server</p>
                         </div>
                     </div>
-                    <p class="text-gray-300 mb-6">Our European branch expanding the family's influence across different territories and bringing new opportunities.</p>
+                    <p class="text-gray-300 mb-6">Our former European server that expanded the family's influence. Currently no longer available.</p>
                     <div class="flex gap-4">
-                        <a href="https://discord.gg/jTcrybmUtT" target="_blank" class="btn-primary px-4 py-2 text-sm inline-flex items-center gap-2">
-                            <span class="discord-emoji custom-emoji"></span>
-                            Discord
-                        </a>
-                        <a href="https://europa-rp.com" target="_blank" class="btn-primary px-4 py-2 text-sm inline-flex items-center gap-2">
-                            <span class="website-emoji custom-emoji"></span>
-                            Website
-                        </a>
+                        <button class="btn-disabled px-4 py-2 text-sm inline-flex items-center gap-2" disabled>
+                            <i class="fas fa-times mr-1 text-gray-500"></i>
+                            Not available
+                        </button>
                     </div>
                 </div>
             </div>
@@ -693,11 +733,11 @@
                 <div class="w-20 h-20 mx-auto mb-6 bg-black rounded-lg border border-red-500 flex items-center justify-center">
                     <img src="Imagens/Europa.jpg" alt="Europa Roleplay" class="w-16 h-16 object-contain">
                 </div>
-                <h2 class="text-3xl font-bold text-red-400 mb-4">Europa Roleplay</h2>
+                <h2 class="text-3xl font-bold text-red-400 mb-4">First LCDP Server</h2>
                 <p class="text-gray-300 mb-6">European operations showcasing international heist coordination and teamwork.</p>
                 <button onclick="showGameplayContent('europa')" class="btn-primary px-8 py-4 text-lg font-bold w-full">
                     <i class="fas fa-play mr-2"></i>
-                    View Europa Content
+                    View First Server Content
                 </button>
             </div>
         </div>
@@ -854,27 +894,25 @@
                         </a>
                     </div>
                 </div>
-                <div class="content-card">
+                <div class="content-card inactive-server">
                     <div class="flex items-center mb-6">
                         <div class="w-16 h-16 mr-4 bg-black rounded-lg border border-red-500 flex items-center justify-center">
                             <img src="Imagens/Europa.jpg" alt="Europa Roleplay" class="w-12 h-12 object-contain">
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold text-red-400">Europa Roleplay</h3>
-                            <p class="text-gray-400">European Operations</p>
+                            <h3 class="text-2xl font-bold text-red-400">First LCDP Server</h3>
+                            <p class="text-gray-400">Old Server (Not Available)</p>
                         </div>
                     </div>
                     <div class="space-y-4">
-                        <a href="https://discord.gg/jTcrybmUtT" target="_blank" class="flex items-center gap-3 p-3 bg-red-900 bg-opacity-20 rounded-lg border border-red-500 hover:bg-red-900 hover:bg-opacity-30 transition-all">
-                            <span class="discord-emoji custom-emoji"></span>
-                            <span class="text-white font-medium">Discord Server</span>
-                            <i class="fas fa-external-link-alt text-red-400 ml-auto"></i>
-                        </a>
-                        <a href="https://europa-rp.com" target="_blank" class="flex items-center gap-3 p-3 bg-red-900 bg-opacity-20 rounded-lg border border-red-500 hover:bg-red-900 hover:bg-opacity-30 transition-all">
-                            <span class="website-emoji custom-emoji"></span>
-                            <span class="text-white font-medium">Official Website</span>
-                            <i class="fas fa-external-link-alt text-red-400 ml-auto"></i>
-                        </a>
+                        <div class="flex items-center gap-3 p-3 bg-gray-900 bg-opacity-40 rounded-lg border border-gray-600">
+                            <i class="fas fa-times text-gray-500"></i>
+                            <span class="text-gray-500 font-medium">Discord Unavailable</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-gray-900 bg-opacity-40 rounded-lg border border-gray-600">
+                            <i class="fas fa-times text-gray-500"></i>
+                            <span class="text-gray-500 font-medium">Website Unavailable</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -978,7 +1016,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-red-400 mb-2">Mastermind</h3>
                     <p class="text-gray-300 font-medium mb-2">Tony Jazavicar</p>
-                    <p class="text-yellow-400 font-bold mb-4">Rank 90</p>
+                    <p class="text-yellow-400 font-bold mb-4">Rank 99</p>
                     <p class="text-gray-300 mb-4">
                         The Professor's cousin and most trusted ally. Acts as the visible leader while Kenneth remains in the shadows.
                     </p>
@@ -988,11 +1026,11 @@
                 </div>
                 <div class="member-card text-center">
                     <div class="member-avatar">
-                        <img src="Imagens/Pika.png" alt="Pika Kurn" class="w-20 h-20 rounded-full object-cover">
+                        <img src="Imagens/Saki.png" alt="Pika Kurn" class="w-20 h-20 rounded-full object-cover">
                     </div>
-                    <h3 class="text-xl font-bold text-red-400 mb-2">The Right Hand</h3>
-                    <p class="text-gray-300 font-medium mb-2">Pika Kurn</p>
-                    <p class="text-yellow-400 font-bold mb-4">Rank 70</p>
+                    <h3 class="text-xl font-bold text-red-400 mb-2">Mastermind</h3>
+                    <p class="text-gray-300 font-medium mb-2">Saki Magic</p>
+                    <p class="text-yellow-400 font-bold mb-4">Rank 99</p>
                     <p class="text-gray-300 mb-4">
                         Trusted lieutenant ensuring all operations run smoothly and maintaining family discipline.
                     </p>
@@ -1018,7 +1056,7 @@
                     </div>
                     <h3 class="text-lg font-bold text-red-400 mb-2">Strategic Alpha</h3>
                     <p class="text-gray-300 font-medium mb-2">Blaze Jazavicar</p>
-                    <p class="text-yellow-400 font-bold mb-3">Rank 80</p>
+                    <p class="text-yellow-400 font-bold mb-3">Rank 95</p>
                     <p class="text-gray-300 text-sm mb-3">Primary strategic planner specializing in complex heist operations and tactical coordination.</p>
                     <div class="bg-red-900 bg-opacity-20 p-2 rounded">
                         <p class="text-red-300 font-semibold italic text-sm">"Strategy wins wars"</p>
@@ -1026,11 +1064,11 @@
                 </div>
                 <div class="member-card text-center">
                     <div class="member-avatar">
-                        <img src="Imagens/Saki.png" alt="Saki Magic" class="w-20 h-20 rounded-full object-cover">
+                        <img src="Imagens/Pika.png" alt="Saki Magic" class="w-20 h-20 rounded-full object-cover">
                     </div>
                     <h3 class="text-lg font-bold text-red-400 mb-2">Strategic Beta</h3>
-                    <p class="text-gray-300 font-medium mb-2">Saki Magic</p>
-                    <p class="text-yellow-400 font-bold mb-3">Rank 80</p>
+                    <p class="text-gray-300 font-medium mb-2">Pika Kurn</p>
+                    <p class="text-yellow-400 font-bold mb-3">Rank 95</p>
                     <p class="text-gray-300 text-sm mb-3">Intelligence operations specialist ensuring perfect information flow and security.</p>
                     <div class="bg-red-900 bg-opacity-20 p-2 rounded">
                         <p class="text-red-300 font-semibold italic text-sm">"Knowledge is power"</p>
@@ -1042,7 +1080,7 @@
                     </div>
                     <h3 class="text-lg font-bold text-red-400 mb-2">Strategic Gamma</h3>
                     <p class="text-gray-300 font-medium mb-2">Kaos Jazavicar</p>
-                    <p class="text-yellow-400 font-bold mb-3">Rank 80</p>
+                    <p class="text-yellow-400 font-bold mb-3">Rank 95</p>
                     <p class="text-gray-300 text-sm mb-3">Tactical operations expert handling field coordination and emergency protocols.</p>
                     <div class="bg-red-900 bg-opacity-20 p-2 rounded">
                         <p class="text-red-300 font-semibold italic text-sm">"Chaos controlled"</p>
@@ -1059,19 +1097,73 @@
                 <div class="w-24 h-1 bg-red-500 mx-auto"></div>
                 <p class="text-gray-400 mt-4">Trusted lieutenants ensuring operational excellence</p>
             </div>
-            <div class="max-w-2xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 <div class="member-card text-center">
                     <div class="member-avatar">
                         <img src="Imagens/Kisaki.png" alt="Kisaki Tetta" class="w-20 h-20 rounded-full object-cover">
                     </div>
                     <h3 class="text-xl font-bold text-red-400 mb-2">The Right Hand</h3>
                     <p class="text-gray-300 font-medium mb-2">Kisaki Tetta</p>
-                    <p class="text-yellow-400 font-bold mb-4">Rank 70</p>
+                    <p class="text-yellow-400 font-bold mb-4">Rank 93</p>
                     <p class="text-gray-300 mb-4 leading-relaxed">
                         Secondary right hand ensuring backup leadership and maintaining operational continuity during critical missions.
                     </p>
                     <div class="bg-red-900 bg-opacity-20 p-4 rounded-lg border-l-4 border-red-500">
                         <p class="text-red-300 font-semibold italic text-lg">"Backup is everything"</p>
+                    </div>
+                </div>
+                <div class="member-card text-center">
+                    <div class="member-avatar">
+                        <img src="Imagens/Adam.png" alt="Adam Henrikson" class="w-20 h-20 rounded-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-red-400 mb-2">The Right Hand</h3>
+                    <p class="text-gray-300 font-medium mb-2">Adam Henrikson</p>
+                    <p class="text-yellow-400 font-bold mb-4">Rank 93</p>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Tactical operations specialist ensuring perfect coordination and strategic execution during high-risk missions.
+                    </p>
+                    <div class="bg-red-900 bg-opacity-20 p-4 rounded-lg border-l-4 border-red-500">
+                        <p class="text-red-300 font-semibold italic text-lg">"Precision in action"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Warlord Operations -->
+        <section class="mb-20">
+            <hr class="border-red-500 border-2 mb-12 opacity-50">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-white mb-4">Warlord Operations</h2>
+                <div class="w-24 h-1 bg-red-500 mx-auto"></div>
+                <p class="text-gray-400 mt-4">Elite combat specialists leading battlefield operations</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="member-card text-center">
+                    <div class="member-avatar">
+                        <img src="Imagens/Zuri.png" alt="Zuri Jazavicar" class="w-20 h-20 rounded-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-red-400 mb-2">Warlord Alpha</h3>
+                    <p class="text-gray-300 font-medium mb-2">Zuri Magic</p>
+                    <p class="text-yellow-400 font-bold mb-4">Rank 90</p>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Combat operations leader specializing in tactical warfare and battlefield coordination for family operations.
+                    </p>
+                    <div class="bg-red-900 bg-opacity-20 p-4 rounded-lg border-l-4 border-red-500">
+                        <p class="text-red-300 font-semibold italic text-lg">"Victory through strength"</p>
+                    </div>
+                </div>
+                <div class="member-card text-center">
+                    <div class="member-avatar">
+                        <img src="Imagens/Neel.png" alt="Rei Orochi" class="w-20 h-20 rounded-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-red-400 mb-2">Warlord Beta</h3>
+                    <p class="text-gray-300 font-medium mb-2"> Kaizen Akiyama</p>
+                    <p class="text-yellow-400 font-bold mb-4">Rank 90</p>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Strategic warfare expert handling advanced combat scenarios and leading elite strike teams.
+                    </p>
+                    <div class="bg-red-900 bg-opacity-20 p-4 rounded-lg border-l-4 border-red-500">
+                        <p class="text-red-300 font-semibold italic text-lg">"Honor in battle"</p>
                     </div>
                 </div>
             </div>
@@ -1080,7 +1172,7 @@
         <!-- Prime Members -->
         <section>
             <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold text-white mb-4">Prime Operatives</h2>
+                <h2 class="text-4xl font-bold text-white mb-4">Prime Operatives (0) Actually</h2>
                 <div class="w-24 h-1 bg-red-500 mx-auto"></div>
                 <p class="text-gray-400 mt-4">Elite members with prime responsibilities and specialized skills</p>
             </div>
@@ -1111,7 +1203,7 @@
                     <div class="member-avatar">
                         <i class="fas fa-cog text-white"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-red-400 mb-2">Prime Gamma (0) Actually</h3>
+                    <h3 class="text-lg font-bold text-red-400 mb-2">Prime Gamma</h3>
                     <p class="text-gray-300 font-medium mb-3">Member Name</p>
                     <p class="text-gray-300 text-sm mb-3">Technical operations and equipment management expert. Actually 0 Primes </p>
                     <div class="bg-red-900 bg-opacity-20 p-2 rounded">
